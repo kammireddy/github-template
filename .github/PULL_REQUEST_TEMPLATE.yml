@@ -1,0 +1,74 @@
+name: "Pull Request Template"
+description: "Fill out the required details for this PR"
+title: "[PR]: "
+body:
+  - type: input
+    id: jira_ticket
+    attributes:
+      label: "🎟️ Ticket to Jira"
+      description: "Enter the Jira ticket ID (e.g., VOICEINTL-XXXX)"
+      placeholder: "VOICEINTL-XXXX"
+    validations:
+      required: true
+
+  - type: textarea
+    id: linked_prs
+    attributes:
+      label: "🔗 Linked Pull Requests (Optional)"
+      description: "List any related PRs with links"
+      placeholder: "- [#119](https://github.com/{TEAM_NAME}/{PROJECT_NAME}/pull/{NUMBER})"
+  
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: "🚀 Urgency Level"
+      description: "How urgent is this PR?"
+      options:
+        - "🔴 High - Critical issue, needs immediate review"
+        - "🟠 Medium - Needs review soon"
+        - "🟢 Low - Review at convenience"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📝 Description"
+      description: "Write your ticket description here."
+      placeholder: "Describe the purpose of this PR..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: "🔄 Changes"
+      description: "Provide a bulleted summary of the changes."
+      placeholder: "- Implemented feature X\n- Fixed bug Y"
+    validations:
+      required: true
+
+  - type: textarea
+    id: testing
+    attributes:
+      label: "✅ Testing"
+      description: "Describe how you tested these changes."
+      placeholder: "- Steps to verify changes"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: todo
+    attributes:
+      label: "📝 To Do"
+      description: "List any pending tasks before merging."
+      options:
+        - label: "Pending tasks (if any)"
+  
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: "💡 Additional Notes"
+      description: "Any extra information relevant to the reviewers."
+      placeholder: "Optional"
+      
